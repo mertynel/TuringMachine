@@ -9,3 +9,14 @@
 /home/martynas/Documents/Csharp projects/Turing Machiene/obj/Debug/netcoreapp2.1/Turing Machiene.AssemblyInfo.cs
 /home/martynas/Documents/Csharp projects/Turing Machiene/obj/Debug/netcoreapp2.1/Turing Machiene.dll
 /home/martynas/Documents/Csharp projects/Turing Machiene/obj/Debug/netcoreapp2.1/Turing Machiene.pdb
+C:\Git Repositories\TuringMachine\bin\Debug\netcoreapp2.1\Turing Machiene.deps.json
+C:\Git Repositories\TuringMachine\bin\Debug\netcoreapp2.1\Turing Machiene.runtimeconfig.json
+C:\Git Repositories\TuringMachine\bin\Debug\netcoreapp2.1\Turing Machiene.runtimeconfig.dev.json
+C:\Git Repositories\TuringMachine\bin\Debug\netcoreapp2.1\Turing Machiene.dll
+C:\Git Repositories\TuringMachine\bin\Debug\netcoreapp2.1\Turing Machiene.pdb
+C:\Git Repositories\TuringMachine\obj\Debug\netcoreapp2.1\Turing Machiene.csprojAssemblyReference.cache
+C:\Git Repositories\TuringMachine\obj\Debug\netcoreapp2.1\Turing Machiene.csproj.CoreCompileInputs.cache
+C:\Git Repositories\TuringMachine\obj\Debug\netcoreapp2.1\Turing Machiene.AssemblyInfoInputs.cache
+C:\Git Repositories\TuringMachine\obj\Debug\netcoreapp2.1\Turing Machiene.AssemblyInfo.cs
+C:\Git Repositories\TuringMachine\obj\Debug\netcoreapp2.1\Turing Machiene.dll
+C:\Git Repositories\TuringMachine\obj\Debug\netcoreapp2.1\Turing Machiene.pdb

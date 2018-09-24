@@ -681,29 +681,32 @@
     ]
   },
   "packageFolders": {
-    "/home/martynas/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\lt0mlns\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/martynas/Documents/Csharp projects/Turing Machiene/Turing Machiene.csproj",
+      "projectUniqueName": "C:\\Git Repositories\\TuringMachine\\Turing Machiene.csproj",
       "projectName": "Turing Machiene",
-      "projectPath": "/home/martynas/Documents/Csharp projects/Turing Machiene/Turing Machiene.csproj",
-      "packagesPath": "/home/martynas/.nuget/packages/",
-      "outputPath": "/home/martynas/Documents/Csharp projects/Turing Machiene/obj/",
+      "projectPath": "C:\\Git Repositories\\TuringMachine\\Turing Machiene.csproj",
+      "packagesPath": "C:\\Users\\lt0mlns\\.nuget\\packages\\",
+      "outputPath": "C:\\Git Repositories\\TuringMachine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/martynas/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\lt0mlns\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://tts01.pkgs.visualstudio.com/_packaging/portal/nuget/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
