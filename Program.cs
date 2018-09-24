@@ -12,11 +12,11 @@ namespace Turing_Machiene
         {
             string path = @"C:\Git Repositories\TuringMachine\data.txt"; // pasikeisk kur yra tekstas
             int startPosition = 0; //set default starting position
-            int iteration = 0;
             string[] taskLine;
             string[] data = new string[4];
-            char[] line;
-            var tasksList = new List<Task>();
+            char[] charLine;
+            string[] stringLine;
+            var rulesList = new List<Task>();
 
             //********************************************************* Data reading ********************************************
             using (FileStream fs = File.OpenRead(path)) // text reading copied from google
@@ -28,45 +28,52 @@ namespace Turing_Machiene
                     data = temp.GetString(b).Split("\r\n"); // \n -- unix(Linux, and OSX) \r\n - windows
                 }
 
-                startPosition = Int32.Parse(data[0]);
-                line = data[1].ToCharArray();
+                Int32.TryParse(data[0], out startPosition);
+
+                charLine = data[1].ToCharArray();
+                stringLine = new string[data.Length];
+                for (int i = 0; i < charLine.Length; i++)
+                {
+                    stringLine[i] = charLine[i].ToString();
+                }
+
                 for (int i = 2; i < data.Length; i++)
                 {
                     if (data[i].Length > 0 && data[i].Length < 12)
                     {
                         taskLine = data[i].Split(" ");
-                        bool _positioIsNumber = int.TryParse(taskLine[0], out int _position);
-                        bool _nextPositionIsNumber = int.TryParse(taskLine[4], out int _nextPosition);
+                        bool _headStateIsNumber = int.TryParse(taskLine[0], out int _headState);
+                        bool _nextHeadStateIsNumber = int.TryParse(taskLine[4], out int _nextHeadState);
 
-                        if (!_nextPositionIsNumber)
+                        if (!_nextHeadStateIsNumber)
                         {
-                            _nextPosition = -1;
+                            _nextHeadState = -1;
                         }
-                        var _task = tasksList.FirstOrDefault(x => x.position == _position);
+                        var _task = rulesList.FirstOrDefault(x => x.headState == _headState);
 
                         if (_task == null)
                         {
                             var notExistingTask = new Task();
                             var taskAction = new Action();
-                            notExistingTask.position = _position;
+                            notExistingTask.headState = _headState;
                             notExistingTask.tasks = new List<Action>(){
                                 new Action {
-                                    currentState = taskLine[1],
-                                    nextState = taskLine[2],
+                                    currentSymbol = taskLine[1],
+                                    nextSymbol = taskLine[2],
                                     moveDirection = taskLine[3],
-                                    nextPosition = _nextPosition
+                                    nextHeadState = _nextHeadState
                                 }
                             };
-                            tasksList.Add(notExistingTask);
+                            rulesList.Add(notExistingTask);
                         }
                         else
                         {
                             _task.tasks.Add(new Action
                             {
-                                currentState = taskLine[1],
-                                nextState = taskLine[2],
+                                currentSymbol = taskLine[1],
+                                nextSymbol = taskLine[2],
                                 moveDirection = taskLine[3],
-                                nextPosition = _nextPosition
+                                nextHeadState = _nextHeadState
                             });
                         }
                     }
@@ -74,6 +81,33 @@ namespace Turing_Machiene
             }
 
             //********************************************** Turing Machine **********************************************
+
+            int headPosition = startPosition - 1; // first element of array
+            int headState = 0;
+
+            while (headState != -1)
+            {
+                var ruleForHead = rulesList.FirstOrDefault(x => x.headState == headState);
+
+                if (ruleForHead == null)
+                    break;
+
+                var headAction = ruleForHead.tasks.FirstOrDefault(x => x.currentSymbol == stringLine[headPosition]);
+
+                if (headAction == null)
+                    break;
+
+                stringLine[headPosition] = headAction.nextSymbol;
+                headState = headAction.nextHeadState;
+                if (headAction.moveDirection == "R")
+                    headPosition++;
+                else if (headAction.moveDirection == "L")
+                    headPosition--;
+            }
+
+            // ****************** result *******************
+            Console.WriteLine(string.Join("", stringLine));
+            Console.ReadLine();
         }
     }
 }

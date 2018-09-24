@@ -5,8 +5,8 @@ namespace Turing_Machiene
 {
     public class Task
     {
-        public int position {get; set;}
+        public int headState { get; set; }
 
-        public List<Action> tasks{ get; set;}
+        public List<Action> tasks { get; set; }
     }
 }
